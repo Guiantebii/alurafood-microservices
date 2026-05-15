@@ -1,0 +1,17 @@
+services:
+  alurafood-pagamento-db:
+    image: mysql:8.0
+    container_name: alurafood-pedidos-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: alurafood_pedidos
+      MYSQL_USER: app
+      MYSQL_PASSWORD: app123
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
